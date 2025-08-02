@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>So sánh giá Samsung Galaxy S25 và iPhone 16</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 0; 
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 { 
+      text-align: center; 
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .target-price {
+      font-size: 1.1em;
+      text-align: center;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 0.9em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table { 
+      width: 100%;
+      max-width: 800px;
+      border-collapse: collapse; 
+      margin-top: 20px; 
+      font-size: 0.9em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    th, td { 
+      border: 1px solid #ddd; 
+      padding: 8px 10px; 
+      text-align: center;
+    }
+    th { 
+      background-color: #007bff;
+      color: white;
+      font-weight: 600;
+    }
+    .samsung-row { 
+      background-color: #fff3e0; /* Light orange for Samsung */
+    }
+    .iphone-row { 
+      background-color: #e3f2fd; /* Light blue for iPhone */
+    }
+    tr:hover {
+      background-color: #d3d3d3;
+    }
+    a { 
+      color: #007bff; 
+      text-decoration: none; 
+    }
+    a:hover { 
+      text-decoration: underline; 
+    }
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      height: 60vh;
+      min-height: 350px;
+      overflow-x: auto;
+      overflow-y: visible;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+    .chart-inner {
+      width: 100%;
+      height: 100%;
+    }
+    canvas#priceChart {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      h1 { font-size: 1.2em; }
+      .target-price { font-size: 0.9em; }
+      p { font-size: 0.8em; }
+      table { font-size: 0.8em; }
+      th, td { padding: 4px 6px; }
+      .chart-container {
+        display: none;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>So sánh giá Samsung Galaxy S25 256GB và iPhone 16 128GB</h1>
+  <div class="target-price">Mức giá mục tiêu: 16.000.000 VND</div>
+  <p>Cập nhật lúc: 14:45:28 2/8/2025</p>
+  <div class="chart-container">
+    <div class="chart-inner">
+      <canvas id="priceChart"></canvas>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th>Tên sản phẩm</th>
+      <th>Giá hiện tại</th>
+      <th>Còn lại để đạt mục tiêu</th>
+      <th>Link sản phẩm</th>
+      <th>Trạng thái</th>
+    </tr>
+    <tr><th colspan="5" style="background-color: #ff6f00; color: white;">Samsung Galaxy S25 256GB</th></tr>
+      <tr class="samsung-row">
+        <td>Samsung Galaxy S25 256GB (Student Price) - Xanh Icy</td>
+        <td>17.080.000 VND</td>
+        <td>-1.080.000 VND</td>
+        <td><a href="" target="_blank">Giá cố định</a></td>
+        <td><span style="color: red;">Chưa đạt mục tiêu</span></td>
+      </tr>
+    
+      <tr class="samsung-row">
+        <td>Samsung Galaxy S25 256GB (Duchuy Mobile) - Xanh Icy</td>
+        <td>16.999.000 VND</td>
+        <td>-999.000 VND</td>
+        <td><a href="https://www.duchuymobile.com/samsung-galaxy-s25-256gb" target="_blank">Xem sản phẩm</a></td>
+        <td><span style="color: red;">Chưa đạt mục tiêu</span></td>
+      </tr>
+    
+      <tr class="samsung-row">
+        <td>Samsung Galaxy S25 256GB (Oneway Mobile) - Xanh Icy</td>
+        <td>17.390.000 VND</td>
+        <td>-1.390.000 VND</td>
+        <td><a href="https://onewaymobile.vn/dien-thoai-samsung-galaxy-s25---12gb---256gb" target="_blank">Xem sản phẩm</a></td>
+        <td><span style="color: red;">Chưa đạt mục tiêu</span></td>
+      </tr>
+    
+      <tr class="samsung-row">
+        <td>Samsung Galaxy S25 256GB (XT Mobile) - Xanh Icy</td>
+        <td>16.799.000 VND</td>
+        <td>-799.000 VND</td>
+        <td><a href="https://www.xtmobile.vn/samsung-galaxy-s25" target="_blank">Xem sản phẩm</a></td>
+        <td><span style="color: red;">Chưa đạt mục tiêu</span></td>
+      </tr>
+    <tr><th colspan="5" style="background-color: #0077b6; color: white;">iPhone 16 128GB</th></tr>
+      <tr class="iphone-row">
+        <td>iPhone 16 128GB (ShopDunk) - Xanh Lưu Ly</td>
+        <td>18.590.000 VND</td>
+        <td>-2.590.000 VND</td>
+        <td><a href="https://shopdunk.com/iphone-16" target="_blank">Xem sản phẩm</a></td>
+        <td><span style="color: red;">Chưa đạt mục tiêu</span></td>
+      </tr>
+    
+      <tr class="iphone-row">
+        <td>iPhone 16 128GB (TopZone) - Xanh Lưu Ly</td>
+        <td>18.890.000 VND</td>
+        <td>-2.890.000 VND</td>
+        <td><a href="https://www.topzone.vn/iphone/iphone-16" target="_blank">Xem sản phẩm</a></td>
+        <td><span style="color: red;">Chưa đạt mục tiêu</span></td>
+      </tr>
+    
+      <tr class="iphone-row">
+        <td>iPhone 16 128GB (XTMobile) - Xanh Lưu Ly</td>
+        <td>18.299.000 VND</td>
+        <td>-2.299.000 VND</td>
+        <td><a href="https://www.xtmobile.vn/iphone-16-chinh-hang" target="_blank">Xem sản phẩm</a></td>
+        <td><span style="color: red;">Chưa đạt mục tiêu</span></td>
+      </tr>
+    
+  </table>
+  <script>
+    const ctx = document.getElementById('priceChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [
+          {
+            label: 'Samsung S25 (Giá Sinh Viên) - Xanh Icy',
+            data: [{"x":"2025-07-11","y":17080000},{"x":"2025-07-12","y":17080000},{"x":"2025-07-13","y":17080000},{"x":"2025-07-14","y":17080000},{"x":"2025-07-15","y":17080000},{"x":"2025-07-16","y":17080000},{"x":"2025-07-17","y":17080000},{"x":"2025-07-18","y":17080000},{"x":"2025-07-19","y":17080000},{"x":"2025-07-20","y":17080000},{"x":"2025-07-21","y":17080000},{"x":"2025-07-22","y":17080000},{"x":"2025-07-23","y":17080000},{"x":"2025-07-24","y":17080000},{"x":"2025-07-25","y":17080000},{"x":"2025-07-26","y":17080000},{"x":"2025-07-27","y":17080000},{"x":"2025-07-28","y":17080000},{"x":"2025-07-29","y":17080000},{"x":"2025-07-30","y":17080000},{"x":"2025-07-31","y":17080000},{"x":"2025-08-01","y":17080000},{"x":"2025-08-02","y":17080000}],
+            borderColor: '#ff6f00', /* Bright orange for Samsung */
+            backgroundColor: 'rgba(255, 111, 0, 0.3)',
+            borderWidth: 4,
+            pointRadius: 5,
+            pointBackgroundColor: '#ff6f00',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 2,
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'Samsung S25 (Đức Huy Mobile) - Xanh Icy',
+            data: [{"x":"2025-07-11","y":16999000},{"x":"2025-07-12","y":16999000},{"x":"2025-07-13","y":16999000},{"x":"2025-07-14","y":16999000},{"x":"2025-07-15","y":16999000},{"x":"2025-07-16","y":16999000},{"x":"2025-07-17","y":16999000},{"x":"2025-07-18","y":16999000},{"x":"2025-07-19","y":16999000},{"x":"2025-07-20","y":16999000},{"x":"2025-07-21","y":16999000},{"x":"2025-07-22","y":16999000},{"x":"2025-07-23","y":16999000},{"x":"2025-07-24","y":16999000},{"x":"2025-07-25","y":16999000},{"x":"2025-07-26","y":16999000},{"x":"2025-07-27","y":16999000},{"x":"2025-07-28","y":16999000},{"x":"2025-07-29","y":16999000},{"x":"2025-07-30","y":16999000},{"x":"2025-07-31","y":16999000},{"x":"2025-08-01","y":16999000},{"x":"2025-08-02","y":16999000}],
+            borderColor: '#d81b60', /* Deep pink for Samsung */
+            backgroundColor: 'rgba(216, 27, 96, 0.1)',
+            borderWidth: 3,
+            pointRadius: 4,
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'Samsung S25 (Oneway Mobile) - Xanh Icy',
+            data: [{"x":"2025-07-11","y":17190000},{"x":"2025-07-12","y":17190000},{"x":"2025-07-13","y":17190000},{"x":"2025-07-14","y":17390000},{"x":"2025-07-15","y":17390000},{"x":"2025-07-16","y":17390000},{"x":"2025-07-17","y":17390000},{"x":"2025-07-18","y":17390000},{"x":"2025-07-19","y":17390000},{"x":"2025-07-20","y":17390000},{"x":"2025-07-21","y":17390000},{"x":"2025-07-22","y":17390000},{"x":"2025-07-23","y":17390000},{"x":"2025-07-24","y":17390000},{"x":"2025-07-25","y":17390000},{"x":"2025-07-26","y":17390000},{"x":"2025-07-27","y":17290000},{"x":"2025-07-28","y":17290000},{"x":"2025-07-29","y":17390000},{"x":"2025-07-30","y":17390000},{"x":"2025-07-31","y":17390000},{"x":"2025-08-01","y":17390000},{"x":"2025-08-02","y":17390000}],
+            borderColor: '#ffab00', /* Amber for Samsung */
+            backgroundColor: 'rgba(255, 171, 0, 0.1)',
+            borderWidth: 3,
+            pointRadius: 4,
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'Samsung S25 (XT Mobile) - Xanh Icy',
+            data: [{"x":"2025-07-11","y":16799000},{"x":"2025-07-12","y":16799000},{"x":"2025-07-13","y":16799000},{"x":"2025-07-14","y":16799000},{"x":"2025-07-15","y":16799000},{"x":"2025-07-16","y":16799000},{"x":"2025-07-17","y":16799000},{"x":"2025-07-18","y":16799000},{"x":"2025-07-19","y":16799000},{"x":"2025-07-20","y":16799000},{"x":"2025-07-21","y":16799000},{"x":"2025-07-22","y":16799000},{"x":"2025-07-23","y":16799000},{"x":"2025-07-24","y":16799000},{"x":"2025-07-25","y":16799000},{"x":"2025-07-26","y":16799000}],
+            borderColor: '#f06292', /* Light pink for Samsung */
+            backgroundColor: 'rgba(240, 98, 146, 0.1)',
+            borderWidth: 3,
+            pointRadius: 4,
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'iPhone 16 (ShopDunk) - Xanh Lưu Ly',
+            data: [{"x":"2025-07-11","y":18590000},{"x":"2025-07-12","y":18590000},{"x":"2025-07-13","y":18590000},{"x":"2025-07-14","y":18590000},{"x":"2025-07-15","y":18590000},{"x":"2025-07-16","y":18590000},{"x":"2025-07-17","y":18590000},{"x":"2025-07-18","y":18590000},{"x":"2025-07-19","y":18590000},{"x":"2025-07-20","y":18590000},{"x":"2025-07-21","y":18590000},{"x":"2025-07-22","y":18590000},{"x":"2025-07-23","y":18590000},{"x":"2025-07-24","y":18590000},{"x":"2025-07-25","y":18590000},{"x":"2025-07-26","y":18590000}],
+            borderColor: '#0077b6', /* Deep blue for iPhone */
+            backgroundColor: 'rgba(0, 119, 182, 0.3)',
+            borderWidth: 4,
+            pointRadius: 5,
+            pointBackgroundColor: '#0077b6',
+            pointBorderColor: '#ffffff',
+            pointBorderWidth: 2,
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'iPhone 16 (TopZone) - Xanh Lưu Ly',
+            data: [{"x":"2025-07-11","y":18890000},{"x":"2025-07-12","y":18890000},{"x":"2025-07-13","y":18890000},{"x":"2025-07-14","y":18890000},{"x":"2025-07-15","y":18890000},{"x":"2025-07-16","y":18890000},{"x":"2025-07-17","y":18890000},{"x":"2025-07-18","y":18890000},{"x":"2025-07-19","y":18890000},{"x":"2025-07-20","y":18890000},{"x":"2025-07-21","y":18890000},{"x":"2025-07-22","y":18890000},{"x":"2025-07-23","y":18890000},{"x":"2025-07-24","y":18890000},{"x":"2025-07-25","y":18890000},{"x":"2025-07-26","y":18890000},{"x":"2025-07-27","y":18890000}],
+            borderColor: '#00b4d8', /* Cyan for iPhone */
+            backgroundColor: 'rgba(0, 180, 216, 0.1)',
+            borderWidth: 3,
+            pointRadius: 4,
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'iPhone 16 (XTMobile) - Xanh Lưu Ly',
+            data: [{"x":"2025-07-11","y":18399000},{"x":"2025-07-12","y":18399000},{"x":"2025-07-13","y":18399000},{"x":"2025-07-14","y":18399000},{"x":"2025-07-15","y":18399000},{"x":"2025-07-16","y":18399000},{"x":"2025-07-17","y":18399000},{"x":"2025-07-18","y":18399000},{"x":"2025-07-19","y":18399000},{"x":"2025-07-20","y":18399000},{"x":"2025-07-21","y":18399000},{"x":"2025-07-22","y":18399000},{"x":"2025-07-23","y":18399000},{"x":"2025-07-24","y":18399000},{"x":"2025-07-25","y":18399000},{"x":"2025-07-26","y":18399000},{"x":"2025-07-27","y":18299000},{"x":"2025-07-28","y":18299000},{"x":"2025-07-29","y":18299000},{"x":"2025-07-30","y":18299000},{"x":"2025-07-31","y":18299000},{"x":"2025-08-01","y":18299000},{"x":"2025-08-02","y":18299000}],
+            borderColor: '#4fc3f7', /* Light blue for iPhone */
+            backgroundColor: 'rgba(79, 195, 247, 0.1)',
+            borderWidth: 3,
+            pointRadius: 4,
+            fill: false,
+            tension: 0.1
+          },
+          {
+            label: 'Giá kỳ vọng (16 triệu VND)',
+            data: [{"x":"2025-07-11","y":16000000},{"x":"2025-07-12","y":16000000},{"x":"2025-07-13","y":16000000},{"x":"2025-07-14","y":16000000},{"x":"2025-07-15","y":16000000},{"x":"2025-07-16","y":16000000},{"x":"2025-07-17","y":16000000},{"x":"2025-07-18","y":16000000},{"x":"2025-07-19","y":16000000},{"x":"2025-07-20","y":16000000},{"x":"2025-07-21","y":16000000},{"x":"2025-07-22","y":16000000},{"x":"2025-07-23","y":16000000},{"x":"2025-07-24","y":16000000},{"x":"2025-07-25","y":16000000},{"x":"2025-07-26","y":16000000},{"x":"2025-07-27","y":16000000},{"x":"2025-07-28","y":16000000},{"x":"2025-07-29","y":16000000},{"x":"2025-07-30","y":16000000},{"x":"2025-07-31","y":16000000},{"x":"2025-08-01","y":16000000},{"x":"2025-08-02","y":16000000}],
+            borderColor: '#000000', /* Black for target price */
+            borderDash: [5, 5],
+            pointRadius: 0,
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+          padding: {
+            left: 60,
+            right: 20,
+            top: 20,
+            bottom: 20
+          }
+        },
+        scales: {
+          x: { 
+            type: 'category', 
+            title: { 
+              display: true, 
+              text: 'Ngày', 
+              font: { size: 14 },
+              padding: { top: 10 }
+            },
+            ticks: { 
+              font: { size: 12 },
+              maxRotation: 45,
+              minRotation: 45,
+              autoSkip: false
+            }
+          },
+          y: {
+            title: { 
+              display: true, 
+              text: 'Giá (VND)', 
+              font: { size: 16 },
+              padding: { bottom: 10 }
+            },
+            beginAtZero: false,
+            min: 15800000,
+            max: 19090000,
+            ticks: { 
+              font: { size: 12 }, // Reverted to default
+              stepSize: 658000, // Doubled tick spacing
+              callback: function(value) { return value.toLocaleString('vi-VN') + ' VND'; },
+              padding: 30
+            }
+          }
+        },
+        plugins: {
+          legend: { 
+            display: true, 
+            labels: { 
+              font: { size: 12 },
+              filter: function(item, chart) {
+                return true; // Hiển thị tất cả
+              },
+              generateLabels: function(chart) {
+                const labels = Chart.defaults.plugins.legend.labels.generateLabels(chart);
+                return [
+                  { text: 'Samsung', fillStyle: '#ff6f00', hidden: false, datasetIndex: -1 },
+                  ...labels.filter(l => l.text.includes('Samsung')),
+                  { text: 'iPhone', fillStyle: '#0077b6', hidden: false, datasetIndex: -1 },
+                  ...labels.filter(l => l.text.includes('iPhone')),
+                  labels.find(l => l.text.includes('Giá kỳ vọng'))
+                ];
+              }
+            }
+          },
+          title: { 
+            display: true, 
+            text: 'Lịch sử giá Samsung Galaxy S25 256GB và iPhone 16 128GB', 
+            font: { size: 16 } 
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+  
